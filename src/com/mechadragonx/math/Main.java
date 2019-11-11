@@ -7,6 +7,7 @@ public class Main
 {
     public static void main(String[] args)
     {
+        System.out.println(primes(30));
         System.out.println(primes(121));
     }
     private static Queue<Integer> prepare(Queue<Integer> numbers, int number)
@@ -29,11 +30,8 @@ public class Main
             result.add(prime);
             for(int i = 0; current < numbers.peek(); i++)
             {
-                if(numbers.peek() != null)
-                {
-                    current = numbers.remove();
-                    if(current % prime != 0) numbers.add(current);
-                }
+                current = numbers.remove();
+                if(current % prime != 0) numbers.add(current);
             }
             current = 0;
         }
