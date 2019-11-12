@@ -44,16 +44,18 @@ public class Main
         }
         return new LinkedList<>();
     }
-    private static void sieve(Queue<Integer> numbers, Queue<Integer> result, int number) {
+    private static void sieve(Queue<Integer> numbers, Queue<Integer> result, int number)
+    {
         int prime = 0;
-        int size = 0;
         int current = 0;
-        while (prime < Math.sqrt(number)) {
+        while (prime < Math.sqrt(number))
+        {
             prime = numbers.remove();
-            size = numbers.size();
             result.add(prime);
-            for (int i = 0; current < numbers.peek(); i++) {
-                if (numbers.peek() != null) {
+            for (int i = 0; current < numbers.peek(); i++)
+            {
+                if (numbers.peek() != null)
+                {
                     current = numbers.remove();
                     if (current % prime != 0) numbers.add(current);
                 }
@@ -65,13 +67,11 @@ public class Main
     private static void sieveSquared(Queue<Integer> numbers, Queue<Integer> result, int number)
     {
         int prime = 0;
-        int size = 0;
         int current = 0;
         int first= 0;
         while(prime < Math.sqrt(number))
         {
             prime = numbers.remove();
-            size = numbers.size();
             result.add(prime);
             first = numbers.peek();
             for(int i = 0; current < numbers.peek(); i++)
@@ -87,6 +87,7 @@ public class Main
         }
         result.addAll(numbers);
     }
+
     private static Queue<Integer> primes(int number)
     {
         Queue<Integer> numbers = new LinkedList<>();
